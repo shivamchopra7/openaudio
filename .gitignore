@@ -1,0 +1,32 @@
+# Python virtual environments & bytecode
+app/env/
+env/
+.venv/
+venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+**/*.egg-info/
+
+# Runtime caches & model checkpoints
+cache/
+app/checkpoints/
+checkpoints/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# macOS / OS metadata
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Editor / agent state
+.vscode/
+.idea/
+.claude/
+.remember/

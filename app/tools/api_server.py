@@ -1,4 +1,5 @@
 import re
+import secrets
 from threading import Lock
 
 import pyrootutils
@@ -32,7 +33,7 @@ class API(ExceptionHandler):
 
         def api_auth(endpoint):
             async def verify(token: Annotated[str, Depends(bearer_auth)]):
-                if token != self.args.api_key:
+                if not token or not secrets.compare_digest(token, self.args.api_key):
                     raise HTTPException(401, None, "Invalid token")
                 return await endpoint()
 
